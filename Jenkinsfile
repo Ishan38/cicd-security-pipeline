@@ -41,10 +41,10 @@ pipeline {
                     passwordVariable: 'NEXUS_PASS'
                 )]) {
                     sh '''
-                        echo "$NEXUS_PASS" | docker login nexus:8082 -u "$NEXUS_USER" --password-stdin
-                        docker tag cicd-security-app:jenkins nexus:8082/cicd-security-app:jenkins
-                        docker push nexus:8082/cicd-security-app:jenkins
-                        docker logout nexus:8082
+                        echo "$NEXUS_PASS" | docker login host.docker.internal:8082 -u "$NEXUS_USER" --password-stdin
+                        docker tag cicd-security-app:jenkins host.docker.internal:8082/cicd-security-app:jenkins
+                        docker push host.docker.internal:8082/cicd-security-app:jenkins
+                        docker logout host.docker.internal:8082
                     '''
                 }
             }
