@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+.env
+.sonar/
+.scannerwork/
+*.log
+jenkins_home/
+nexus-data/
